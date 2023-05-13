@@ -15,4 +15,9 @@ public class WordCounterTest {
     public void ignore_empty_string(){
         assertEquals(0, WordCounter.create("").count());
     }
+
+    @Test
+    public void ignore_empty_string_with_white_spaces(){
+        assertEquals(0, WordCounter.create("   ").count());
+    }
 }
