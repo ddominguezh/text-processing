@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 public class WordCounterTest {
     
     @Test
-    public void count_words(){
+    public void count_one_word(){
         assertEquals(1, WordCounter.create("Hello").count());
     }
 
