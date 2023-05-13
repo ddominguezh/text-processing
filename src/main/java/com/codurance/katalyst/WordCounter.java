@@ -11,7 +11,7 @@ public class WordCounter {
     }
     
     public int count(){
-        if("".equals(text)){
+        if("".equals(text.trim())){
             return 0;
         }
         return 1;
