@@ -10,6 +10,8 @@ public class TextCleaner {
         return new TextCleaner(text);
     }
     public String clean(){
-        return this.text.replace(".", "").replace(",", "");
+        return this.text.chars()
+            .filter(c -> Character.isDigit(c) || Character.isAlphabetic(c) || Character.isWhitespace(c))
+            .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append).toString();
     }
 }

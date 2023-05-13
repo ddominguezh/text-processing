@@ -8,7 +8,7 @@ public class TextCleanerTest {
     
     @Test
     public void remove_dots(){
-        assertEquals("Hello, this is an example for you to practice You should grab this text and make it as your test case", TextCleaner.create("Hello, this is an example for you to practice. You should grab this text and make it as your test case.").clean());
+        assertEquals("Hello this is an example for you to practice You should grab this text and make it as your test case", TextCleaner.create("Hello this is an example for you to practice. You should grab this text and make it as your test case.").clean());
     }
 
     @Test
