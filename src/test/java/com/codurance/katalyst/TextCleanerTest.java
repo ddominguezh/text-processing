@@ -10,4 +10,9 @@ public class TextCleanerTest {
     public void remove_dots(){
         assertEquals("Hello, this is an example for you to practice You should grab this text and make it as your test case", TextCleaner.create("Hello, this is an example for you to practice. You should grab this text and make it as your test case.").clean());
     }
+
+    @Test
+    public void remove_commas_and_dots(){
+        assertEquals("Hello this is an example for you to practice You should grab this text and make it as your test case", TextCleaner.create("Hello, this is an example for you to practice. You should grab this text and make it as your test case.").clean());
+    }
 }
