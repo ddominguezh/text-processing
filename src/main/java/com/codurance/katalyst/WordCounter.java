@@ -11,6 +11,9 @@ public class WordCounter {
     }
     
     public int count(){
-        return 0;
+        if("".equals(text)){
+            return 0;
+        }
+        return 1;
     }
 }
