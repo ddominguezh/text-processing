@@ -10,6 +10,6 @@ public class TextCleaner {
         return new TextCleaner(text);
     }
     public String clean(){
-        return null;
+        return this.text.replace(".", "");
     }
 }
