@@ -14,6 +14,6 @@ public class WordCounter {
         if("".equals(TextCleaner.create(text).clean().trim())){
             return 0;
         }
-        return 1;
+        return TextCleaner.create(text).clean().split(" ", -1).length;
     }
 }
