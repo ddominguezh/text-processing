@@ -21,4 +21,17 @@ public class TopWordsTest {
         };
         assertEquals(expected, TopWords.create("Hello, this is an").value());
     }
+
+    @Test
+    public void ignore_empty_words(){
+        List<String> expected = new ArrayList<String>(){
+            {
+                add("an");
+                add("Hello");
+                add("is");
+                add("this");
+            }
+        };
+        assertEquals(expected, TopWords.create("Hello, this  is an").value());
+    }
 }
