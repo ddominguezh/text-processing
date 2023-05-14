@@ -13,10 +13,10 @@ public class TopWordsTest {
     public void sort_words_with_the_same_occurrences(){
         List<String> expected = new ArrayList<String>(){
             {
-                add("an");
-                add("Hello");
-                add("is");
                 add("this");
+                add("is");
+                add("Hello");
+                add("an");
             }
         };
         assertEquals(expected, TopWords.create("Hello, this is an").value());
@@ -26,10 +26,10 @@ public class TopWordsTest {
     public void ignore_empty_words(){
         List<String> expected = new ArrayList<String>(){
             {
-                add("an");
-                add("Hello");
-                add("is");
                 add("this");
+                add("is");
+                add("Hello");
+                add("an");
             }
         };
         assertEquals(expected, TopWords.create("Hello, this  is an").value());
@@ -40,9 +40,9 @@ public class TopWordsTest {
         List<String> expected = new ArrayList<String>(){
             {
                 add("an");
-                add("Hello");
-                add("is");
                 add("this");
+                add("is");
+                add("Hello");
             }
         };
         assertEquals(expected, TopWords.create("Hello, this  is an An").value());
@@ -53,11 +53,12 @@ public class TopWordsTest {
         List<String> expected = new ArrayList<String>(){
             {
                 add("Hello");
-                add("an");
-                add("is");
                 add("this");
+                add("is");
+                add("an");
             }
         };
         assertEquals(expected, TopWords.create("Hello, this hello is an").value());
     }
+
 }

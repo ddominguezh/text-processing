@@ -24,7 +24,7 @@ public class TopWords {
             .sorted((a, b) -> {
                 int compareTo = countOcurrences(b) - countOcurrences(a);
                 if(compareTo == 0){
-                    return a.toUpperCase().compareTo(b.toUpperCase());
+                    return b.toUpperCase().compareTo(a.toUpperCase());
                 }
                 return compareTo;
             })
