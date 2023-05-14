@@ -34,4 +34,30 @@ public class TopWordsTest {
         };
         assertEquals(expected, TopWords.create("Hello, this  is an").value());
     }
+
+    @Test
+    public void remove_duplicate_results(){
+        List<String> expected = new ArrayList<String>(){
+            {
+                add("an");
+                add("Hello");
+                add("is");
+                add("this");
+            }
+        };
+        assertEquals(expected, TopWords.create("Hello, this  is an An").value());
+    }
+
+    @Test
+    public void get_ranking_words_with_more_occurences(){
+        List<String> expected = new ArrayList<String>(){
+            {
+                add("Hello");
+                add("an");
+                add("is");
+                add("this");
+            }
+        };
+        assertEquals(expected, TopWords.create("Hello, this hello is an").value());
+    }
 }
