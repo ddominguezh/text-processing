@@ -1,5 +1,7 @@
 package com.codurance.katalyst;
 
+import java.util.Arrays;
+
 public class WordCounter {
 
     private String text;
@@ -10,10 +12,10 @@ public class WordCounter {
         return new WordCounter(text);
     }
     
-    public int count(){
+    public long count(){
         if("".equals(TextCleaner.create(text).clean().trim())){
             return 0;
         }
-        return TextCleaner.create(text).clean().split(" ", -1).length;
+        return Arrays.asList(TextCleaner.create(text).clean().split(" ", -1)).stream().filter(word -> !"".equals(word)).count();
     }
 }
