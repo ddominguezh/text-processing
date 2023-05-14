@@ -15,7 +15,10 @@ public class TopWords {
     public static TopWords create(String text) {
         return new TopWords(TextCleaner.create(text).clean());
     }
-    public List<String> value() {
+    public List<String> max(int value) {
+        return all().subList(0, value);
+    }
+    public List<String> all() {
         TreeSet<String> set = new TreeSet<String>(String.CASE_INSENSITIVE_ORDER);
         set.addAll(Arrays.asList(text.split(" ", -1)));
         return set
